@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  border-radius: 5px;
+}
+
+.display {
+  height: 150px;
+  background-color: limegreen;
+}
+
+.result {
+  height: 100px;
+  background-color: lightblue;
+}
+
+.btn {
+  border-radius: 5px;
+  background-color: red;
+  height: 40px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.btns {
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  background-color: aquamarine;
+}
+
+.reset {
+  background-color: coral;
+}
