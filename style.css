@@ -1,12 +1,28 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 .wrapper {
-  width: 50%;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    30deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(46, 105, 103, 1) 70%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.container {
+  padding-top: 10%;
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .box {
@@ -14,13 +30,22 @@ body {
 }
 
 .display {
-  height: 150px;
+  min-height: 200px;
   background-color: limegreen;
 }
 
 .result {
-  height: 100px;
+  min-height: 100px;
   background-color: lightblue;
+}
+
+.btns {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  min-height: 50px;
+  background-color: aquamarine;
 }
 
 .btn {
@@ -29,14 +54,6 @@ body {
   height: 40px;
   width: 100px;
   border: 1px solid black;
-}
-
-.btns {
-  justify-content: space-around;
-  display: flex;
-  flex-direction: row;
-  height: 50px;
-  background-color: aquamarine;
 }
 
 .reset {
