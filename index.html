@@ -20,145 +20,33 @@
             <li>
               Rock beats scissors. Paper beats rock. Scissors beats paper.
             </li>
-            <li>When prompted, choose between rock paper and scissors.</li>
+            <li>Select the rock paper or scissors button to begin.</li>
             <li>5 games total.</li>
-            <li>Best of 5 wins, but there can be a tie!</li>
-            <li>Results will be displayed at the end.</li>
+            <li>Best of 5 rounds so there can be a tie!</li>
+            <li>Results will be displayed each round and at the end.</li>
             <li>
               To reset the game, press F5 on your keyboard or refresh your
               webpage.
             </li>
           </ul>
         </div>
-        <div class="box result">Result</div>
+        <div class="box result">
+          <div class="player-score">
+            Player Score: <div class="pscore">0</div>
+          </div>
+          <div class="computer-score">
+            Computer Score: <div class="cscore">0</div>
+          </div>
+        </div>
         <div class="box btns">
-            <button class="btn" type="button">ROCK</button>
-            <button class="btn" type="button">PAPER</button>
-            <button class="btn" type="button">SCISSORS</button>
+            <button id="rock" class="btn" type="button">ROCK</button>
+            <button id="paper" class="btn" type="button">PAPER</button>
+            <button id="scissors" class="btn" type="button">SCISSORS</button>
           </div>
         </div>
       </div>
       <!--<div class="box reset">Reset</div>-->
     </div>
-    <script>
-      // // initialise scores at 0
-      // let playerScore = 0;
-      // let computerScore = 0;
-
-      // // Randomly select an option for the computer and return it
-      // function computerPlay() {
-      //   //select a random number between 1 and 3 and store it
-      //   const randNum = Math.floor(Math.random() * 3) + 1;
-
-      //   //if the random number the followon the roundg return: 1) Rock 2) Paper 3) Scissors
-      //   if (randNum === 1) {
-      //     return "rock";
-      //   } else if (randNum === 2) {
-      //     return "paper";
-      //   } else if (randNum === 3) {
-      //     return "scissors";
-      //   }
-      // }
-
-      // // Takes user input rock, paper or scissors and returns the value.
-      // function playerPlay() {
-      //   // Make user input lower case for comparison
-      //   let userInput = prompt(
-      //     "Please enter Rock, Scissors or Paper to play!"
-      //   ).toLowerCase();
-
-      //   while (
-      //     userInput !== "rock" &&
-      //     userInput !== "paper" &&
-      //     userInput !== "scissors"
-      //   ) {
-      //     let userInput = prompt(
-      //       "You did not enter a valid answer. Please enter Rock, Paper or Scissors"
-      //     ).toLowerCase();
-      //     if (
-      //       userInput === "rock" ||
-      //       userInput === "paper" ||
-      //       userInput === "scissors"
-      //     ) {
-      //       return userInput;
-      //     }
-      //   }
-      //   console.log(userInput);
-      //   return userInput;
-      // }
-      // // Determines who won the rounds and adds to score
-      // function playRound(playerSelection, computerSelection) {
-      //   computerSelection = computerPlay();
-      //   playerSelection = playerPlay();
-
-      //   if (playerSelection === computerSelection) {
-      //     console.log("You tied!");
-      //   } else if (
-      //     playerSelection === "rock" &&
-      //     computerSelection === "paper"
-      //   ) {
-      //     console.log("You lost the round! Paper beats Rock!");
-      //     computerScore++;
-      //   } else if (
-      //     playerSelection === "paper" &&
-      //     computerSelection === "rock"
-      //   ) {
-      //     console.log("You won the round! Paper beats Rock!");
-      //     playerScore++;
-      //   } else if (
-      //     playerSelection === "paper" &&
-      //     computerSelection === "scissors"
-      //   ) {
-      //     console.log("The lost the round! Scissors beats Paper!");
-      //     computerScore++;
-      //   } else if (
-      //     playerSelection === "scissors" &&
-      //     computerSelection === "paper"
-      //   ) {
-      //     console.log("You won the round! Scissors beats Paper!");
-      //     playerScore++;
-      //   } else if (
-      //     playerSelection === "scissors" &&
-      //     computerSelection === "rock"
-      //   ) {
-      //     console.log("You won the round! Rock beats Scissors!");
-      //     computerScore++;
-      //   } else if (
-      //     playerSelection === "rock" &&
-      //     computerSelection === "scissors"
-      //   ) {
-      //     console.log("You won the round! Rock beats Scissors!");
-      //     playerScore++;
-      //   }
-      // }
-
-      // // Game function that plays 5 rounds and logs the result
-      // function game() {
-      //   // set number of rounds
-      //   let roundNum = 5;
-
-      //   for (let i = 0; i < roundNum; i++) {
-      //     playRound();
-      //     console.log(playerScore, `Player score: ${playerScore}`);
-      //     console.log(computerScore, `Computer score ${computerScore}`);
-      //   }
-
-      //   if (playerScore > computerScore) {
-      //     console.log(
-      //       `You won the game! Player score: ${playerScore}. Computer score: ${computerScore}`
-      //     );
-      //   } else if (playerScore < computerScore) {
-      //     console.log(
-      //       `You lost the game! Player score: ${playerScore}. Computer score: ${computerScore}`
-      //     );
-      //   } else if (playerScore === computerScore) {
-      //     console.log(`You tie!`);
-      //   }
-      // }
-      // alert(
-      //   "Welcome to rock paper scissors! This game is played entirely in the console. To access your console please press Ctrl + Shift + I in Chrome or use F12 in Firefox."
-      // );
-      // game();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
