@@ -69,29 +69,42 @@ ul li {
 /* Result Styles */
 
 .result {
-  display: flex;
-  flex-direction: row;
-  align-items: top;
-  justify-content: space-around;
+  justify-content: center;
+  justify-content: space-between;
   margin-top: 5px;
   min-height: 150px;
+  font-size: 24px;
   background-color: rgba(191, 191, 191, 1);
 }
 
-.pscore {
-  margin-top: 1em;
-  font-size: 24px;
+.scores {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: top;
+}
+
+.pscore {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
   justify-content: center;
 }
 
 .cscore {
+  display: flex;
+  flex-direction: row;
   margin-top: 1em;
-  font-size: 24px;
+  justify-content: center;
+}
+
+.winner-announce {
+  margin-top: 2em;
+  align-content: bottom;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  font-size: 18px;
 }
 
 /* Button Styles */
