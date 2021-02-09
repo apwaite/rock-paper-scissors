@@ -79,7 +79,7 @@ function playRound(playerSelection, computerSelection) {
     console.log("You won the round! Paper beats Rock!");
     playerScore++;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    console.log("The lost the round! Scissors beats Paper!");
+    console.log("You lost the round! Scissors beats Paper!");
     computerScore++;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     console.log("You won the round! Scissors beats Paper!");
