@@ -71,7 +71,7 @@ ul li {
 .result {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: top;
   justify-content: space-around;
   margin-top: 5px;
   min-height: 150px;
@@ -79,6 +79,7 @@ ul li {
 }
 
 .pscore {
+  margin-top: 1em;
   font-size: 24px;
   display: flex;
   flex-direction: row;
@@ -86,6 +87,7 @@ ul li {
 }
 
 .cscore {
+  margin-top: 1em;
   font-size: 24px;
   display: flex;
   flex-direction: row;
