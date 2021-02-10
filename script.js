@@ -4,7 +4,10 @@ let computerScore = 0;
 
 let userInput = "";
 
+// select elements
 const buttons = document.querySelectorAll("button");
+const pscore = document.querySelector(".pscore");
+const cscore = document.querySelector(".cscore");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
