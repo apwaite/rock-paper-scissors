@@ -8,21 +8,25 @@ let userInput = "";
 const buttons = document.querySelectorAll("button");
 const pscore = document.querySelector(".pscore");
 const cscore = document.querySelector(".cscore");
+const announce = document.querySelector(".winner");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.id === "rock") {
       userInput = button.id;
       playRound(userInput, computerPlay());
-      console.log(userInput);
+      updateScore();
+      checkForWinner();
     } else if (button.id === "paper") {
       userInput = button.id;
       playRound(userInput, computerPlay());
-      console.log(userInput);
+      updateScore();
+      checkForWinner();
     } else if (button.id === "scissors") {
       userInput = button.id;
       playRound(userInput, computerPlay());
-      console.log(userInput);
+      updateScore();
+      checkForWinner();
     }
   });
 });
@@ -74,49 +78,60 @@ function playRound(playerSelection, computerSelection) {
   playerSelection = userInput;
 
   if (playerSelection === computerSelection) {
-    console.log("You tied!");
+    announce.textContent = "You tied!";
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-    console.log("You lost the round! Paper beats Rock!");
+    announce.textContent = "You lost the round! Paper beats Rock!";
     computerScore++;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    console.log("You won the round! Paper beats Rock!");
+    announce.textContent = "You won the round! Paper beats Rock!";
     playerScore++;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    console.log("You lost the round! Scissors beats Paper!");
+    announce.textContent = "You lost the round! Scissors beats Paper!";
     computerScore++;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    console.log("You won the round! Scissors beats Paper!");
+    announce.textContent = "You won the round! Scissors beats Paper!";
     playerScore++;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    console.log("You lost the round! Rock beats Scissors!");
+    announce.textContent = "You lost the round! Rock beats Scissors!";
     computerScore++;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    console.log("You won the round! Rock beats Scissors!");
+    announce.textContent = "You won the round! Rock beats Scissors!";
     playerScore++;
   }
 }
 
+function updateScore() {
+  pscore.textContent = `${playerScore}`;
+  cscore.textContent = `${computerScore}`;
+}
+
 // Game function that plays 5 rounds and logs the result
-function game() {
+function checkForWinner() {
   // set number of rounds
   let roundNum = 5;
 
-  for (let i = 0; i < roundNum; i++) {
-    playRound();
-    console.log(playerScore, `Player score: ${playerScore}`);
-    console.log(computerScore, `Computer score ${computerScore}`);
+  if (playerScore >= roundNum) {
+    console.log("Player wins");
+  } else if (computerScore >= roundNum) {
+    console.log("Computer wins");
   }
 
-  if (playerScore > computerScore) {
-    console.log(
-      `You won the game! Player score: ${playerScore}. Computer score: ${computerScore}`
-    );
-  } else if (playerScore < computerScore) {
-    console.log(
-      `You lost the game! Player score: ${playerScore}. Computer score: ${computerScore}`
-    );
-  } else if (playerScore === computerScore) {
-    console.log(`You tie!`);
-  }
+  // for (let i = 0; i < roundNum; i++) {
+  //   playRound();
+  //   console.log(playerScore, `Player score: ${playerScore}`);
+  //   console.log(computerScore, `Computer score ${computerScore}`);
+  // }
+
+  // if (playerScore > computerScore) {
+  //   console.log(
+  //     `You won the game! Player score: ${playerScore}. Computer score: ${computerScore}`
+  //   );
+  // } else if (playerScore < computerScore) {
+  //   console.log(
+  //     `You lost the game! Player score: ${playerScore}. Computer score: ${computerScore}`
+  //   );
+  // } else if (playerScore === computerScore) {
+  //   console.log(`You tie!`);
+  // }
 }
 // game()
