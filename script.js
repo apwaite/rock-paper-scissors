@@ -1,6 +1,7 @@
 // initialise scores at 0
 let playerScore = 0;
 let computerScore = 0;
+let currentRound = 0;
 
 let userInput = "";
 
@@ -79,24 +80,31 @@ function playRound(playerSelection, computerSelection) {
 
   if (playerSelection === computerSelection) {
     announce.textContent = "You tied!";
+    currentRound++;
   } else if (playerSelection === "rock" && computerSelection === "paper") {
     announce.textContent = "You lost the round! Paper beats Rock!";
     computerScore++;
+    currentRound++;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     announce.textContent = "You won the round! Paper beats Rock!";
     playerScore++;
+    currentRound++;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
     announce.textContent = "You lost the round! Scissors beats Paper!";
     computerScore++;
+    currentRound++;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     announce.textContent = "You won the round! Scissors beats Paper!";
     playerScore++;
+    currentRound++;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
     announce.textContent = "You lost the round! Rock beats Scissors!";
     computerScore++;
+    currentRound++;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     announce.textContent = "You won the round! Rock beats Scissors!";
     playerScore++;
+    currentRound++;
   }
 }
 
@@ -110,28 +118,11 @@ function checkForWinner() {
   // set number of rounds
   let roundNum = 5;
 
-  if (playerScore >= roundNum) {
-    console.log("Player wins");
-  } else if (computerScore >= roundNum) {
-    console.log("Computer wins");
+  if (currentRound === roundNum && playerScore === computerScore) {
+    announce.textContent = "It's a tie!";
+  } else if (currentRound === roundNum && playerScore > computerScore) {
+    announce.textContent = "Player wins!";
+  } else if (currentRound === roundNum && playerScore < computerScore) {
+    announce.textContent = "Computer wins!";
   }
-
-  // for (let i = 0; i < roundNum; i++) {
-  //   playRound();
-  //   console.log(playerScore, `Player score: ${playerScore}`);
-  //   console.log(computerScore, `Computer score ${computerScore}`);
-  // }
-
-  // if (playerScore > computerScore) {
-  //   console.log(
-  //     `You won the game! Player score: ${playerScore}. Computer score: ${computerScore}`
-  //   );
-  // } else if (playerScore < computerScore) {
-  //   console.log(
-  //     `You lost the game! Player score: ${playerScore}. Computer score: ${computerScore}`
-  //   );
-  // } else if (playerScore === computerScore) {
-  //   console.log(`You tie!`);
-  // }
 }
-// game()
