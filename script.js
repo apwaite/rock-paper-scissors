@@ -113,16 +113,25 @@ function updateScore() {
   cscore.textContent = `${computerScore}`;
 }
 
+function disableButtons() {
+  document.getElementById("rock").disabled = true;
+  document.getElementById("paper").disabled = true;
+  document.getElementById("scissors").disabled = true;
+}
+
 // Game function that plays 5 rounds and logs the result
 function checkForWinner() {
   // set number of rounds
   let roundNum = 5;
 
   if (currentRound === roundNum && playerScore === computerScore) {
-    announce.textContent = "It's a tie!";
+    announce.textContent = "It's a tie! Nobody wins!";
+    disableButtons();
   } else if (currentRound === roundNum && playerScore > computerScore) {
-    announce.textContent = "Player wins!";
+    announce.textContent = "Congratulations! You won!";
+    disableButtons();
   } else if (currentRound === roundNum && playerScore < computerScore) {
-    announce.textContent = "Computer wins!";
+    announce.textContent = "Commiserations! The computer wins!";
+    disableButtons();
   }
 }
