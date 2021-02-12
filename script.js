@@ -1,11 +1,11 @@
-// initialise scores at 0
+// Initialise scores at 0
 let playerScore = 0;
 let computerScore = 0;
 let currentRound = 0;
 
 let userInput = "";
 
-// select elements
+// Select and store elements from GUI
 const buttons = document.querySelectorAll("button");
 const pscore = document.querySelector(".pscore");
 const cscore = document.querySelector(".cscore");
@@ -34,10 +34,10 @@ buttons.forEach((button) => {
 
 // Randomly select an option for the computer and return it
 function computerPlay() {
-  //select a random number between 1 and 3 and store it
+  // Select a random number between 1 and 3 and store it
   const randNum = Math.floor(Math.random() * 3) + 1;
 
-  //if the random number the followon the roundg return: 1) Rock 2) Paper 3) Scissors
+  // If the random number the followon the roundg return: 1) Rock 2) Paper 3) Scissors
   if (randNum === 1) {
     return "rock";
   } else if (randNum === 2) {
@@ -47,33 +47,7 @@ function computerPlay() {
   }
 }
 
-// // Takes user input rock, paper or scissors and returns the value.
-// function playerPlay() {
-//   // Make user input lower case for comparison
-//   let userInput = prompt(
-//     "Please enter Rock, Scissors or Paper to play!"
-//   ).toLowerCase();
-
-//   while (
-//     userInput !== "rock" &&
-//     userInput !== "paper" &&
-//     userInput !== "scissors"
-//   ) {
-//     let userInput = prompt(
-//       "You did not enter a valid answer. Please enter Rock, Paper or Scissors"
-//     ).toLowerCase();
-//     if (
-//       userInput === "rock" ||
-//       userInput === "paper" ||
-//       userInput === "scissors"
-//     ) {
-//       return userInput;
-//     }
-//   }
-//   console.log(userInput);
-//   return userInput;
-// }
-// Determines who won the rounds and adds to score
+// Determines who won a single round, adds to score and adds +1 to currentRound
 function playRound(playerSelection, computerSelection) {
   computerSelection = computerPlay();
   playerSelection = userInput;
@@ -119,9 +93,9 @@ function disableButtons() {
   document.getElementById("scissors").disabled = true;
 }
 
-// Game function that plays 5 rounds and logs the result
+// Game function that plays a set number of rounds and displays the result
 function checkForWinner() {
-  // set number of rounds
+  // Set number of rounds
   let roundNum = 5;
 
   if (currentRound === roundNum && playerScore === computerScore) {
