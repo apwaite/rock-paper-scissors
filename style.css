@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: "Roboto", Verdana, sans-serif;
 }
 
@@ -9,7 +8,7 @@ body {
 
 .wrapper {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background: rgb(2, 0, 36);
@@ -72,6 +71,7 @@ ul li {
   justify-content: center;
   justify-content: space-between;
   margin-top: 5px;
+  padding-bottom: 0;
   min-height: 150px;
   font-size: 24px;
   background-color: rgba(191, 191, 191, 1);
@@ -85,6 +85,21 @@ ul li {
 }
 
 .pscore {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+  justify-content: center;
+}
+
+.round-tracking {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: top;
+  margin-top: 1em;
+}
+
+.round {
   display: flex;
   flex-direction: row;
   margin-top: 1em;
