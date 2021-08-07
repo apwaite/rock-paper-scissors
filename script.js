@@ -10,6 +10,7 @@ const buttons = document.querySelectorAll("button");
 const pscore = document.querySelector(".pscore");
 const cscore = document.querySelector(".cscore");
 const announce = document.querySelector(".winner");
+const round = document.querySelector(".round");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -85,6 +86,7 @@ function playRound(playerSelection, computerSelection) {
 function updateScore() {
   pscore.textContent = `${playerScore}`;
   cscore.textContent = `${computerScore}`;
+  round.textContent = `${currentRound}`;
 }
 
 function disableButtons() {
