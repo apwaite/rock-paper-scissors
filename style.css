@@ -1,10 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", Verdana, sans-serif;
+  font-family: 'Roboto', Verdana, sans-serif;
 }
 
+/* TODO: Add mobile responsive features */
+
 /* Container Styles */
+
+/* TODO: Update styling */
 
 .wrapper {
   width: 100%;
